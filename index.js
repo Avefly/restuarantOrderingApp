@@ -1,4 +1,4 @@
-import { menuArray } from '/data.js'
+import { menuArray } from './data.js'
 const menuSection = document.querySelector('#menu-section')
 
 const currentMenuHtml = menuArray.map(function(item){
@@ -11,6 +11,9 @@ const currentMenuHtml = menuArray.map(function(item){
                 <p class='food-name'>${item.name}</p>
                 <p class='ingredients'>${item.ingredients}</p>
                 <p class='price'>${item.price}</p>
+            </div>
+            <div class='add'>
+                <i class="fa-solid fa-circle-plus add-icon"></i>
             </div>
         </div>
         `
