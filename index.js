@@ -22,3 +22,9 @@ const currentMenuHtml = menuArray.map(function(item){
 }).join('')
 
 menuSection.innerHTML = currentMenuHtml
+
+const addIcon = document.querySelector('.add-icon')
+
+addIcon.addEventListener('click', function(e){
+    
+})
