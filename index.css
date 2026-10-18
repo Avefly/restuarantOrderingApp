@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: Times New Roman, Times, serif;
 } 
 
 .header-image {
@@ -10,12 +11,19 @@ body {
     margin-left: 30px;
     margin-top: 40px;
     margin-right: 30px;
+    display: flex;
+    flex-direction: column;
 }
 
 .food-item {
     display:flex;
-    gap: 20px;
     border-bottom: 1px solid rgb(178, 168, 168);
+    justify-content: space-between;
+}
+
+.food-info {
+    display:flex;
+    gap: 20px;
 }
 
 /* .food-details {
@@ -24,6 +32,29 @@ body {
     justify-content: center;
     border: 1px solid rgb(178, 168, 168);
 } */
+
+.food-name {
+    font-size: large;
+}
+
+.ingredients {
+    font-size: small;
+    color: rgb(135, 127, 127);
+}
+
+.price {
+    font-style: bold;
+}
+
+.add {
+    display:flex;
+    padding: 25px;
+}
+
+.add-icon {
+    font-size: 30px;
+    text-align: center;
+}
 
 .food-name {
     font-size: large;
