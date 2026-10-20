@@ -3,7 +3,7 @@ const menuSection = document.querySelector('#menu-section')
 
 const currentMenuHtml = menuArray.map(function(item){
     return `
-        <div class='food-item'>
+        <div class='food-item' id=${item.id}>
             <div class='food-info'>
                 <div class='food-emojis'>
                     <p class='food-emoji'>${item.emoji}</p>
@@ -25,6 +25,8 @@ menuSection.innerHTML = currentMenuHtml
 
 const addIcon = document.querySelector('.add-icon')
 
-addIcon.addEventListener('click', function(e){
-    
+menuSection.addEventListener('click', function(e){
+    if (e.target.classList.contains('add-icon')) {
+        console.log(e.target.parentElement.parentElement.id)
+    }
 })
