@@ -2,15 +2,15 @@ body {
     margin: 0;
     font-family: Times New Roman, Times, serif;
 } 
+main {
+    margin: 30px 40px;
+}
 
 .header-image {
     width: 100%;
 }
 
 #menu-section {
-    margin-left: 30px;
-    margin-top: 40px;
-    margin-right: 30px;
     display: flex;
     flex-direction: column;
 }
@@ -33,7 +33,7 @@ body {
     border: 1px solid rgb(178, 168, 168);
 } */
 
-.food-name {
+.big-text {
     font-size: large;
 }
 
@@ -68,4 +68,13 @@ body {
     font-size: 30px;
     color: rgb(135, 127, 127);
     text-align: center;
+}
+
+.order-button {
+    background-color: #38BDF8;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    width: 100%;
 }

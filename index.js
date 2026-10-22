@@ -9,7 +9,7 @@ const currentMenuHtml = menuArray.map(function(item){
                     <p class='food-emoji'>${item.emoji}</p>
                 </div>
                 <div class='food-details'>
-                    <p class='food-name'>${item.name}</p>
+                    <p class='big-text'>${item.name}</p>
                     <p class='ingredients'>${item.ingredients.join(', ')}</p>
                     <p class='price'>$${item.price}</p>
                 </div>
@@ -24,9 +24,25 @@ const currentMenuHtml = menuArray.map(function(item){
 menuSection.innerHTML = currentMenuHtml
 
 const addIcon = document.querySelector('.add-icon')
+const orderSection = document.querySelector('#order-section')
+let customerOrder = []
+
+function renderOrder() {
+    let counts = {'Pizza': 0, 'Hamburger': 0, 'Beer': 0}
+    customerOrder.forEach(function(item){
+        counts[item] += 1
+    })
+    // console.log(counts)
+    orderSection.innerHTML = `
+    
+    `
+}
 
 menuSection.addEventListener('click', function(e){
     if (e.target.classList.contains('add-icon')) {
-        console.log(e.target.parentElement.parentElement.id)
+        let placement = e.target.parentElement.parentElement.id
+        customerOrder.push(menuArray[placement].name)
+        renderOrder()
+        // console.log(customerOrder)
     }
 })
