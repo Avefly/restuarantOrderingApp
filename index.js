@@ -26,7 +26,9 @@ menuSection.innerHTML = currentMenuHtml
 const addIcon = document.querySelector('.add-icon')
 const orderDetails = document.querySelector('.order-details')
 const orderSection = document.querySelector('#order-section')
+const orderButton = document.querySelector('.order-button')
 const priceInfo = document.querySelector('.price-info')
+const cardSection = document.querySelector('.card-section')
 let customerOrder = []
 
 function getCounts(arr) {
@@ -51,7 +53,7 @@ function renderOrder() {
         priceArr.push(price)
         orderDetails.innerHTML += `
         <div class='order-item'>
-            <div class='order-format'>
+            <div class='order-format' id=${[key]}>
                 <p>${menuArray[key].name} x${count[key]}</p>
                 <button class='remove-btn'>remove</button>
             </div>
@@ -71,5 +73,21 @@ menuSection.addEventListener('click', function(e){
         let placement = e.target.parentElement.parentElement.id
         customerOrder.push(menuArray[placement].id)
         renderOrder()
+    }
+})
+
+const removeBtn = document.querySelector('.remove-btn')
+
+orderSection.addEventListener('click', function(e){
+    if (e.target.classList.contains('remove-btn')) {
+        let keyName = Number(e.target.parentElement.id)
+        customerOrder = customerOrder.filter(item => item !== keyName)
+        renderOrder()
+    }
+    if(orderDetails.innerHTML === ``) {
+        orderSection.classList.add('hidden')
+    }
+    if(e.target.classList.contains('order-button')) {
+        cardSection.classList.remove('hidden')
     }
 })
