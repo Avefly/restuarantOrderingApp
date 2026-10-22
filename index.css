@@ -56,10 +56,6 @@ main {
     text-align: center;
 }
 
-.food-name {
-    font-size: large;
-}
-
 .food-emoji {
     font-size: 50px;
 }
@@ -68,6 +64,41 @@ main {
     font-size: 30px;
     color: rgb(135, 127, 127);
     text-align: center;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.order-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-format {
+    display: flex;
+    gap: 3px;
+}
+
+.remove-btn {
+    border: none;
+    padding: 0;
+}
+
+.price-info {
+    display: flex;
+    justify-content: space-between;
+    border-top: solid 1px #052431;
 }
 
 .order-button {

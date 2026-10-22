@@ -24,25 +24,52 @@ const currentMenuHtml = menuArray.map(function(item){
 menuSection.innerHTML = currentMenuHtml
 
 const addIcon = document.querySelector('.add-icon')
+const orderDetails = document.querySelector('.order-details')
 const orderSection = document.querySelector('#order-section')
+const priceInfo = document.querySelector('.price-info')
 let customerOrder = []
 
+function getCounts(arr) {
+    let counts = {}
+    arr.forEach(item => {
+        counts[item] = (counts[item] || 0) + 1;
+    });
+    return counts
+}
+
+function getItemCost(price, num){
+    return price * num
+}
+
 function renderOrder() {
-    let counts = {'Pizza': 0, 'Hamburger': 0, 'Beer': 0}
-    customerOrder.forEach(function(item){
-        counts[item] += 1
+    let count = getCounts(customerOrder)
+    orderDetails.innerHTML = ''
+    orderSection.classList.remove('hidden')
+    let priceArr = []
+    Object.keys(count).forEach((key) => {
+        let price = getItemCost(menuArray[key].price, count[key])
+        priceArr.push(price)
+        orderDetails.innerHTML += `
+        <div class='order-item'>
+            <div class='order-format'>
+                <p>${menuArray[key].name} x${count[key]}</p>
+                <button class='remove-btn'>remove</button>
+            </div>
+            <p>$${price}</p>
+        </div>
+        `
     })
-    // console.log(counts)
-    orderSection.innerHTML = `
-    
+    let totalPrice = priceArr.reduce((a, b) => a + b, 0)
+    priceInfo.innerHTML = `
+    <p class=big-text> Total Price </p>
+    <p>$${totalPrice}</p>
     `
 }
 
 menuSection.addEventListener('click', function(e){
     if (e.target.classList.contains('add-icon')) {
         let placement = e.target.parentElement.parentElement.id
-        customerOrder.push(menuArray[placement].name)
+        customerOrder.push(menuArray[placement].id)
         renderOrder()
-        // console.log(customerOrder)
     }
 })
