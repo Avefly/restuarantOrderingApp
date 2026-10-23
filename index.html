@@ -29,15 +29,24 @@
                     <input
                     type="text"
                     name="name"
-                    placeholder="Enter your name" >
+                    placeholder="Enter your name" 
+                    minlength="5" 
+                    required>
                     <input
-                    type="number"
+                    type="text"
                     name="cardNumber"
-                    placeholder="Enter card Number" >
+                    placeholder="Enter card Number"
+                    inputmode="numeric"
+                    minlength="10"
+                    required>
                     <input
-                    type="number"
+                    type="text"
                     name="cvvNumber"
-                    placeholder="Enter your CVV" >
+                    inputmode="numeric"
+                    placeholder="Enter your CVV" 
+                    minlength="3"
+                    required>
+                    <button class="order-button">Pay</button>
                 </form>
             </section>
         </main>

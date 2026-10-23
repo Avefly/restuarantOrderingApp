@@ -118,7 +118,10 @@ main {
     transform: translate(-50%, -50%);
     text-align: center;
     font-weight: bold;
-    background-color: #69aab8;
+    background-color: #d4f7ff;
+    width: 55%;
+    height: 40%;
+    padding: 20px;
 }
 
 .card-form {
@@ -134,4 +137,9 @@ input {
     padding: 10px;
     border: 1px solid #9eccec;
     border-radius: 5px;
+    height: 40px;
+}
+
+.card-form .order-button {
+    margin-top: 20px;
 }
