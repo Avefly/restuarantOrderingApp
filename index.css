@@ -141,5 +141,14 @@ input {
 }
 
 .card-form .order-button {
-    margin-top: 20px;
+    margin-top: 30px;
+    padding: 5px 10px;
+}
+
+.end-section {
+    margin-top: 30px;
+    background-color: #F0F9FF;
+    color: #075985;
+    padding: 10px 10px;
+    border-radius: 1px;
 }

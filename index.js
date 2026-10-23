@@ -23,12 +23,14 @@ const currentMenuHtml = menuArray.map(function(item){
 
 menuSection.innerHTML = currentMenuHtml
 
-const addIcon = document.querySelector('.add-icon')
+
 const orderDetails = document.querySelector('.order-details')
 const orderSection = document.querySelector('#order-section')
 const orderButton = document.querySelector('.order-button')
 const priceInfo = document.querySelector('.price-info')
 const cardSection = document.querySelector('.card-section')
+// const payBtn = document.querySelector('.pay-btn')
+const cardForm = document.querySelector('.card-form')
 let customerOrder = []
 
 function getCounts(arr) {
@@ -90,4 +92,15 @@ orderSection.addEventListener('click', function(e){
     if(e.target.classList.contains('order-button')) {
         cardSection.classList.remove('hidden')
     }
+})
+
+const inputName = document.querySelector('#input-name')
+const endSection = document.querySelector('.end-section')
+
+cardForm.addEventListener('submit', function(event){
+    event.preventDefault()
+    cardSection.classList.add('hidden')
+    orderSection.classList.add('hidden')
+    endSection.classList.remove('hidden')
+    endSection.innerHTML = `<p class='end-message'>Thanks, ${inputName.value}! Your order is on it's way!</p>`
 })
